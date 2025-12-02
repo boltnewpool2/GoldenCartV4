@@ -1,0 +1,282 @@
+[
+  {
+    "name": "Neha Odela",
+    "supervisor": "Permenia Shrava - 306",
+    "department": "General"
+  },
+  {
+    "name": "Dhanraj S",
+    "supervisor": "Janga Srikanth",
+    "department": "Intl Chat - Hosting"
+  },
+  {
+    "name": "Saiman Mohammad",
+    "supervisor": "Sunitha",
+    "department": "All Support"
+  },
+  {
+    "name": "Jella Tharun",
+    "supervisor": "Ranjan Sagar Naidu",
+    "department": "Intl Chat - General"
+  },
+  {
+    "name": "Kante Rajesh",
+    "supervisor": "Shanthi Priya Chintha",
+    "department": "Hosting Skill"
+  },
+  {
+    "name": "Prakash Burle",
+    "supervisor": "Ashish Ashish",
+    "department": "All Support"
+  },
+  {
+    "name": "Nikhitha Palbettu",
+    "supervisor": "Sangeeta Bhuyan",
+    "department": "Intl Chat - Sales"
+  },
+  {
+    "name": "Aleem Sk",
+    "supervisor": "Beide Anish Kumar",
+    "department": "All Support"
+  },
+  {
+    "name": "Baseeruddin Mohammed",
+    "supervisor": "Sangeetha",
+    "department": "All Support"
+  },
+  {
+    "name": "Deepthi Laxmi Sai Prasanna Pathuri",
+    "supervisor": "Kalyan Chetty",
+    "department": "Intl Chat - Hosting"
+  },
+  {
+    "name": "Saketh Burra",
+    "supervisor": "Gariganti Prashanth Kumar",
+    "department": "Hosting Skill"
+  },
+  {
+    "name": "Kavya Deshagani",
+    "supervisor": "Sanjo Jose",
+    "department": "Intl Chat - Sales"
+  },
+  {
+    "name": "Saneem Sultan",
+    "supervisor": "Shaik Shoaib Raheman",
+    "department": "Intl Chat - Email Support"
+  },
+  {
+    "name": "Annaidas Suchithra",
+    "supervisor": "Shanthi Priya Chintha",
+    "department": "General"
+  },
+  {
+    "name": "Mohammed Naseer",
+    "supervisor": "Shaik Shoaib Raheman",
+    "department": "Intl Chat - Email Support"
+  },
+  {
+    "name": "Chimmani Madhuri",
+    "supervisor": "Ashish Ashish",
+    "department": "All Support"
+  },
+  {
+    "name": "Sri Pavani Kandakatla",
+    "supervisor": "Permenia Shrava - 306",
+    "department": "General"
+  },
+  {
+    "name": "Saiteja Goli",
+    "supervisor": "Beide Anish Kumar",
+    "department": "All Support"
+  },
+  {
+    "name": "Nikhil Munjanwar",
+    "supervisor": "Gottemukkula Prashanth Chary",
+    "department": "Intl Chat - Sales"
+  },
+  {
+    "name": "Aravindran Elumala",
+    "supervisor": "Shaik Shoaib Raheman",
+    "department": "Intl Chat - Email Support"
+  },
+  {
+    "name": "Santosh Kankurthi",
+    "supervisor": "Sunitha",
+    "department": "All Support"
+  },
+  {
+    "name": "Shiva G",
+    "supervisor": "Shaik Shoaib Raheman",
+    "department": "Intl Chat - Email Support"
+  },
+  {
+    "name": "Siri Chandana Lenkalapalli",
+    "supervisor": "Vennam Srikanth",
+    "department": "General"
+  },
+  {
+    "name": "Keerthi Jampala",
+    "supervisor": "Permenia Shrava - 306",
+    "department": "General"
+  },
+  {
+    "name": "Shaheen Begum",
+    "supervisor": "Sangeetha",
+    "department": "All Support"
+  },
+  {
+    "name": "Alex P Rajeev",
+    "supervisor": "Sunitha",
+    "department": "All Support"
+  },
+  {
+    "name": "Tauseef Yadav",
+    "supervisor": "Shaik Shoaib Raheman",
+    "department": "Intl Chat - Email Support"
+  },
+  {
+    "name": "Naresh Pasunoori",
+    "supervisor": "Atree Chaudhuri",
+    "department": "Proactive Messaging"
+  },
+  {
+    "name": "Doshna Kousalya",
+    "supervisor": "Shaik Shoaib Raheman",
+    "department": "Intl Chat - Email Support"
+  },
+  {
+    "name": "Bharath Nalla",
+    "supervisor": "Abdul Rahman",
+    "department": "Intl Chat - General"
+  },
+  {
+    "name": "Pooja Kumari",
+    "supervisor": "Shaik Shoaib Raheman",
+    "department": "Intl Chat - Email Support"
+  },
+  {
+    "name": "Zoya Fathima",
+    "supervisor": "Beide Anish Kumar",
+    "department": "All Support"
+  },
+  {
+    "name": "Bhavana Ravulapati",
+    "supervisor": "Janga Srikanth",
+    "department": "Intl Chat - Hosting"
+  },
+  {
+    "name": "Boddu Chandana",
+    "supervisor": "Ashish Ashish",
+    "department": "All Support"
+  },
+  {
+    "name": "Devilal Maloth",
+    "supervisor": "Sangeeta Bhuyan",
+    "department": "Intl Chat - Sales"
+  },
+  {
+    "name": "Loukya Deshaboina",
+    "supervisor": "Aryan Dubey",
+    "department": "Intl Chat - General"
+  },
+  {
+    "name": "Tarun Namala",
+    "supervisor": "Kalyan Chetty",
+    "department": "Intl Chat - Billing"
+  },
+  {
+    "name": "Jashnavi Bethi",
+    "supervisor": "Permenia Shrava - 306",
+    "department": "General"
+  },
+  {
+    "name": "S Bhargavi",
+    "supervisor": "Manoj Agarwal",
+    "department": "DHE"
+  },
+  {
+    "name": "Priyanka Kadamandla",
+    "supervisor": "Manoj Agarwal",
+    "department": "DHE"
+  },
+  {
+    "name": "Syed Mohammed Irtekaz Ahmer",
+    "supervisor": "Manoj Agarwal",
+    "department": "DHE"
+  },
+  {
+    "name": "Jaya Pandey",
+    "supervisor": "Manoj Agarwal",
+    "department": "DHE"
+  },
+  {
+    "name": "Rithika Dinawale",
+    "supervisor": "Manoj Agarwal",
+    "department": "DHE"
+  },
+  {
+    "name": "Adnan Mohammed",
+    "supervisor": "Rajitha",
+    "department": "DHE"
+  },
+  {
+    "name": "Deeksha Chettiwar",
+    "supervisor": "Rajitha",
+    "department": "Inbound"
+  },
+  {
+    "name": "Samreen K",
+    "supervisor": "Deepika",
+    "department": "Inbound"
+  },
+  {
+    "name": "Amgoth Mounika",
+    "supervisor": "Rajitha",
+    "department": "Inbound"
+  },
+  {
+    "name": "Mrinal Mayank",
+    "supervisor": "Manoj Agarwal",
+    "department": "DHE"
+  },
+  {
+    "name": "Ibrahim Mohammed",
+    "supervisor": "Manoj Agarwal",
+    "department": "DHE"
+  },
+  {
+    "name": "Nitesh Yadav",
+    "supervisor": "Rajitha",
+    "department": "Inbound"
+  },
+  {
+    "name": "Ara Sai Ganesh Rai",
+    "supervisor": "Rajitha",
+    "department": "Inbound"
+  },
+  {
+    "name": "Shaik Shamsheer",
+    "supervisor": "Deepika",
+    "department": "Inbound"
+  },
+  {
+    "name": "Mohammed Amjad Ali Khan",
+    "supervisor": "Azharuddin MD_CDT",
+    "department": "Outbound"
+  },
+  {
+    "name": "Aakriti Arya",
+    "supervisor": "Azharuddin MD_CDT",
+    "department": "Outbound"
+  },
+  {
+    "name": "Manisha K",
+    "supervisor": "Azharuddin MD_CDT",
+    "department": "Outbound"
+  },
+  {
+    "name": "Irfan Mohd",
+    "supervisor": "Azharuddin MD_CDT",
+    "department": "Outbound"
+  }
+]
