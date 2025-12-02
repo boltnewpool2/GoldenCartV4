@@ -9,6 +9,7 @@ import { RaffleWeek, Winner, Contestant } from './types/raffle';
 import week1Data from './data/week1.json';
 import week2Data from './data/week2.json';
 import week3Data from './data/week3.json';
+import week7Data from './data/week7.json';
 
 function App() {
   const [winners, setWinners] = useState<Winner[]>(() => {
@@ -29,6 +30,13 @@ function App() {
         supervisor: 'Srikanth Janga',
         department: 'International Messaging - Hosting',
         week: 2,
+        prizeAmount: 300,
+      },
+      {
+        name: 'Aakriti Arya',
+        supervisor: 'Azharuddin MD_CDT',
+        department: 'Outbound',
+        week: 3,
         prizeAmount: 300,
       },
     ];
@@ -76,6 +84,12 @@ function App() {
         drawDate: new Date('2025-12-23'),
         contestants: [],
       },
+      {
+        week: 7,
+        status: 'coming_soon',
+        drawDate: new Date('2025-12-30'),
+        contestants: week7Data,
+      },
     ];
     setRaffles(raffleData);
   }, [winners]);
@@ -107,8 +121,8 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50">
       <div className="container mx-auto px-4 py-8">
         <header className="text-center mb-12">
-          <div className="flex justify-center mb-6">
-            <GoDaddyLogo className="w-48 h-auto" />
+          <div className="flex justify-center mb-3">
+            <GoDaddyLogo className="w-64 h-auto" />
           </div>
           <h1 className="text-5xl font-bold text-gray-800 mb-4">
             Golden Cart Raffle

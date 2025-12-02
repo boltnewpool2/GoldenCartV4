@@ -40,7 +40,7 @@ export function RaffleCard({ raffle, onStartDraw, canDraw = false }: RaffleCardP
             </div>
           )}
           {isComingSoon && (
-            <div className="bg-gray-400 text-white px-4 py-1 rounded-full">
+            <div className="bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 text-white px-4 py-1 rounded-full shadow-lg animate-pulse">
               <span className="text-sm font-semibold">Coming Soon</span>
             </div>
           )}

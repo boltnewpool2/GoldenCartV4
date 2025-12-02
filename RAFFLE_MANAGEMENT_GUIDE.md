@@ -36,6 +36,7 @@ Contestants are stored in JSON files located in the `src/data/` folder. Each wee
 - Week 4: `src/data/week4.json`
 - Week 5: `src/data/week5.json`
 - Week 6: `src/data/week6.json`
+- Week 7: `src/data/week7.json`
 
 ### JSON File Format
 
@@ -80,13 +81,21 @@ To add contestants to Week 4, edit `src/data/week4.json`:
 
 ---
 
-## Updating Draw Dates
+## Updating Draw Dates and Timers
 
-Draw dates for upcoming raffles are defined in `src/App.tsx` in the `raffles` array.
+Draw dates for upcoming raffles are defined in `src/App.tsx` in the `raffles` array. The countdown timer automatically displays on "Coming Soon" raffle cards.
+
+### How Timers Work
+
+The countdown timer:
+- Automatically appears on raffle cards with `status: 'coming_soon'`
+- Counts down to the `drawDate` specified in the raffle configuration
+- Updates every second showing Days, Hours, Minutes, Seconds
+- No separate timer configuration needed - it's automatic
 
 ### Location in Code
 
-Open `src/App.tsx` and find the `useEffect` hook that creates the raffle data (around line 38):
+Open `src/App.tsx` and find the `useEffect` hook that creates the raffle data (around line 48-92):
 
 ```typescript
 {
@@ -103,15 +112,33 @@ Open `src/App.tsx` and find the `useEffect` hook that creates the raffle data (a
 },
 ```
 
-### Changing a Draw Date
+### Changing a Draw Date/Timer
 
-To change a draw date, update the date string in the format `YYYY-MM-DD`:
+To update when a raffle will occur:
+
+1. Open `src/App.tsx`
+2. Find the week you want to update in the raffles array
+3. Update the `drawDate` in the format `YYYY-MM-DD`:
 
 ```typescript
 drawDate: new Date('2025-12-15'),  // December 15, 2025
 ```
 
-**Note:** Once the draw date is reached and contestants are added, a "Start Raffle Draw" button will automatically appear on the raffle card.
+**Note:**
+- Once the draw date is reached and contestants are added, a "Start Raffle Draw" button will automatically appear on the raffle card
+- The timer automatically stops showing when the date is reached
+- You can set dates far into the future (e.g., '2026-03-15')
+
+### Example: Setting a Timer for 3 Months Away
+
+```typescript
+{
+  week: 10,
+  status: 'coming_soon',
+  drawDate: new Date('2026-03-02'),  // 3 months from now
+  contestants: week10Data,
+}
+```
 
 ---
 
@@ -154,6 +181,57 @@ All confirmed winners are displayed in the "Winners Dashboard" at the top of the
 - Supervisor
 - Department
 - Prize amount ($300)
+
+### Updating a Winner Manually (Without Running Draw)
+
+If you need to set or change a winner without running the automated draw:
+
+1. **Open** `src/App.tsx`
+2. **Find** the `winners` state initialization (around line 19-41)
+3. **Add or modify** the winner entry in the default array:
+
+```typescript
+{
+  name: 'Aakriti Arya',
+  supervisor: 'Azharuddin MD_CDT',
+  department: 'Outbound',
+  week: 3,
+  prizeAmount: 300,
+}
+```
+
+**Complete Example:**
+```typescript
+return [
+  {
+    name: 'Syed Ala Uddin',
+    supervisor: 'Kalyan',
+    department: 'International Hosting',
+    week: 1,
+    prizeAmount: 300,
+  },
+  {
+    name: 'Dhanraj S',
+    supervisor: 'Srikanth Janga',
+    department: 'International Messaging - Hosting',
+    week: 2,
+    prizeAmount: 300,
+  },
+  {
+    name: 'Aakriti Arya',
+    supervisor: 'Azharuddin MD_CDT',
+    department: 'Outbound',
+    week: 3,
+    prizeAmount: 300,
+  },
+];
+```
+
+**Important:**
+- Each winner must have: `name`, `supervisor`, `department`, `week`, and `prizeAmount`
+- The `week` number must match an existing raffle week
+- Winners are stored in localStorage after first load, so you may need to clear browser data to see changes
+- Alternatively, use the "Delete Winner" feature and add the new winner
 
 ### Deleting a Winner
 
@@ -229,7 +307,8 @@ src/
 │   ├── week3.json                  # Week 3 contestants
 │   ├── week4.json                  # Week 4 contestants
 │   ├── week5.json                  # Week 5 contestants
-│   └── week6.json                  # Week 6 contestants
+│   ├── week6.json                  # Week 6 contestants
+│   └── week7.json                  # Week 7 contestants
 └── types/
     └── raffle.ts                   # TypeScript type definitions
 ```
@@ -242,27 +321,45 @@ src/
 
 ### Adding More Weeks
 
-To add Week 7, Week 8, etc.:
+To add Week 8, Week 9, etc.:
 
-1. **Create the JSON file:**
-   ```bash
-   touch src/data/week7.json
-   ```
+**Step 1: Create the JSON file**
 
-2. **Import it in App.tsx:**
-   ```typescript
-   import week7Data from './data/week7.json';
-   ```
+Create a new JSON file in `src/data/` folder:
+```bash
+touch src/data/week8.json
+```
 
-3. **Add to the raffles array:**
-   ```typescript
-   {
-     week: 7,
-     status: 'coming_soon',
-     drawDate: new Date('2025-12-30'),
-     contestants: week7Data,
-   }
-   ```
+Start with an empty array if no contestants yet:
+```json
+[]
+```
+
+**Step 2: Import the data in App.tsx**
+
+Open `src/App.tsx` and add the import at the top (around line 9-12):
+```typescript
+import week8Data from './data/week8.json';
+```
+
+**Step 3: Add to the raffles array**
+
+In the `useEffect` hook (around line 48-92), add a new raffle object before the closing bracket:
+```typescript
+{
+  week: 8,
+  status: 'coming_soon',
+  drawDate: new Date('2026-01-06'),  // Change to your desired date
+  contestants: week8Data,
+}
+```
+
+**Important Notes:**
+- The `week` number must match the JSON filename
+- Use format `YYYY-MM-DD` for dates
+- Set `status: 'coming_soon'` for future raffles
+- The `contestants` field should reference the imported data
+- Add a comma after the previous week's entry
 
 ### Raffle Status Types
 
@@ -277,16 +374,61 @@ The status is automatically determined based on:
 
 ---
 
+## Customizing Appearance
+
+### Changing the GoDaddy Logo Size
+
+The logo size is controlled in `src/App.tsx` (around line 118):
+
+```typescript
+<GoDaddyLogo className="w-64 h-auto" />
+```
+
+- `w-48` = smaller logo
+- `w-64` = current size (medium-large)
+- `w-80` = larger logo
+
+### Adjusting Gap Between Logo and Heading
+
+In `src/App.tsx`, the gap is controlled by the `mb-X` class (around line 117):
+
+```typescript
+<div className="flex justify-center mb-3">
+```
+
+- `mb-2` = smaller gap
+- `mb-3` = current gap
+- `mb-6` = larger gap
+
+### Styling the "Coming Soon" Badge
+
+The badge styling is in `src/components/RaffleCard.tsx` (around line 43):
+
+```typescript
+<div className="bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 text-white px-4 py-1 rounded-full shadow-lg animate-pulse">
+```
+
+To change colors, modify the gradient classes:
+- `from-amber-400` = starting color
+- `via-orange-500` = middle color
+- `to-red-500` = ending color
+
+The `animate-pulse` class makes it gently pulse/fade in and out.
+
 ## Common Tasks Quick Reference
 
 | Task | File to Edit | Action |
 |------|-------------|--------|
 | Add contestants | `src/data/weekX.json` | Add JSON objects with name, supervisor, department |
-| Change draw date | `src/App.tsx` | Update `drawDate: new Date('YYYY-MM-DD')` |
+| Change draw date/timer | `src/App.tsx` | Update `drawDate: new Date('YYYY-MM-DD')` in raffles array |
+| Update winner manually | `src/App.tsx` | Add/modify winner in default winners array (line 19-41) |
 | Change password | Browser console | `localStorage.setItem('raffle_admin_password', 'NewPassword')` |
 | Run a draw | Website UI | Click "Start Raffle Draw" button |
 | Delete winner | Website UI | Click trash icon, enter password |
 | Add new week | Multiple files | Create JSON, import in App.tsx, add to raffles array |
+| Change logo size | `src/App.tsx` | Modify `w-XX` class on GoDaddyLogo component |
+| Adjust logo gap | `src/App.tsx` | Modify `mb-X` class on logo container |
+| Style Coming Soon badge | `src/components/RaffleCard.tsx` | Change gradient colors in badge classes |
 
 ---
 
